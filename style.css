@@ -1,15 +1,44 @@
+*{
+    margin: 10px 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+.container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 2%;
+}
+
+
 #video-container {
-	
+	background: #fff;
+    border-radius: 5px;
 	position: relative;
+	overflow: hidden;
+
 }
 #video-container video {
 	width: 100%;
-	height: 100%;
-	position: relative;
+    border-radius: 15px;
+	background-color: rgb(121, 122, 123,2);
+	
 }
 
 /*============================== controls====================*/
 #video-controls {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	border: 1px solid #fff;
+	border-radius: 0 0 15px 15px ;
+	width: 100%;
+	height: 60px;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -21,7 +50,7 @@
 	-o-transition: opacity .3s;
 	-ms-transition: opacity .3s;
 	transition: opacity .3s;
-	background-image: linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+	/*background-image: linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
 	background-image: -o-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
 	background-image: -moz-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
 	background-image: -webkit-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
@@ -33,14 +62,17 @@
 		left top,
 		color-stop(0.13, rgb(3,113,168)),
 		color-stop(1, rgb(0,136,204))
-	);
+	);*/
 }
 
 #video-container:hover #video-controls {
 	opacity: .9;
 }
 
-button {
+#video-controls button {
+	flex-basis: 10%;
+	width: 20px;
+	height: 20px;
 	background: rgba(0,0,0,.5);
 	border: 0;
 	color: #EEE;
@@ -55,10 +87,90 @@ button:hover {
 }
 
 #seek-bar {
-	width: 360px;
+	width: 100%;
+	flex-basis: 55%;
 }
 
 #volume-bar {
-	width: 60px;
+	flex-basis: 10%;
+	width: 100%;
+
 }
 /*============================== list channls ====================*/
+.container .channl-list{
+	border: 1px solid #333;
+    background: #fff;
+    border-radius: 5px;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+
+}
+.container .channl-list::-webkit-scrollbar{
+    width: 7px;
+}
+.container .channl-list::-webkit-scrollbar-track{
+    background: #ccc;
+    border-radius: 50px;
+}
+.container .channl-list::-webkit-scrollbar-thumb{
+    background: #666;
+    border-radius: 50px;
+}
+
+.container .channl-list .vid img{
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    background: transparent;
+}
+.container .channl-list .vid {
+    display: flex;
+	width: 100%;
+    align-items:center;
+    gap: 15px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0, .1);
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.container .channl-list .vid:hover{
+    background: #eee;
+    color: #333;
+     transform: scaleY(1.1);
+}
+ .container .channl-list .vid .title{
+    color: #333;
+    font-size: 17px;
+} 
+.container .channl-list  .active{
+    background: #2980b9;
+    transition: all 0.4s;
+
+} 
+.container .channl-list .active .title{
+    color: #fff;
+} 
+.container .channl-list .active:hover {
+    background: #2980b9;
+} 
+
+@media (max-width:991px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 10px;
+    }
+    
+}
+@media (max-width:768px) {
+    .container{
+        grid-template-columns: 1fr;
+    }
+    
+}
