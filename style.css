@@ -14,10 +14,9 @@ body{
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 10px;
-
     align-items:start;
-	background-color: #262626;
-    min-height: 620px;
+    background-color: #262626;
+    min-height: 600px;
 	
 }	
 
@@ -27,7 +26,7 @@ body{
     flex-wrap: wrap;
     justify-content:space-between;
     border-radius: 15px;
-	overflow: hidden;
+    overflow: hidden;
     align-content: center;
     width: 100%;
 
