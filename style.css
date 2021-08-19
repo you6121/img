@@ -100,7 +100,7 @@ button:hover {
 	
     background:transparent;
     border-radius: 5px;
-    height: 539px;
+    height: 519px;
     overflow-x: hidden;
     overflow-y: auto;
     opacity: 0.9;
@@ -131,7 +131,7 @@ button:hover {
 }
 .container .channl-list .vid {
     display: flex;
-	width: 95%;
+    width: 100%;
     align-items:center;
     margin-top: 5px;
     padding-left: 15PX;
