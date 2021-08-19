@@ -10,8 +10,8 @@ body{
    
 }
 .container{
-    margin-top: auto;
-	margin-bottom:auto;
+    margin: 20px;
+	pading:5px;
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 10px;
